@@ -127,4 +127,4 @@ uv run ru-ai-channels probe имя_канала  # посмотреть, что 
 
 ---
 
-Каталог ведёт privatekey7, автор канала [@privatekey_ai](https://t.me/privatekey_ai), который входит в каталог на общих основаниях.
+Каталог ведёт privatekey7, автор канала [@privatekey_ai](https://t.me/+qR_btslfzAQxMGUy), который входит в каталог на общих основаниях.
