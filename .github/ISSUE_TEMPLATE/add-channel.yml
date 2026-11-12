@@ -1,0 +1,47 @@
+name: Предложить канал
+description: Добавить русскоязычный Telegram-канал в каталог
+title: "Добавить канал: @"
+labels: ["add-channel"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Критерии включения описаны в README. Канал проверяется по ним так же, как остальные.
+  - type: input
+    id: handle
+    attributes:
+      label: Хэндл канала
+      description: Без @, например `privatekey_ai`
+    validations:
+      required: true
+  - type: dropdown
+    id: section
+    attributes:
+      label: Раздел
+      options:
+        - Claude Code и кодовые агенты
+        - Вайбкодинг
+        - ИИ-агенты и LLM-инженерия
+        - ИИ в процессах разработки
+        - Новости ИИ для разработчиков
+    validations:
+      required: true
+  - type: input
+    id: about
+    attributes:
+      label: О чём канал, одной строкой
+      description: Факты без оценок и рекламных оборотов
+    validations:
+      required: true
+  - type: checkboxes
+    id: criteria
+    attributes:
+      label: Проверка по критериям
+      options:
+        - label: Посты на русском
+          required: true
+        - label: Последний пост не старше 30 дней, лента t.me/s/<канал> открыта
+          required: true
+        - label: Канал авторский: не сетка, не агрегатор и не только воронка в платный продукт
+          required: true
+        - label: Я автор канала или связан с ним (если да, укажите в комментарии)

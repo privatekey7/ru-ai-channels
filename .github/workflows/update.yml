@@ -1,0 +1,35 @@
+name: Update subscribers
+
+on:
+  schedule:
+    - cron: "17 5 * * *" # раз в сутки, 05:17 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+      - run: uv sync
+      - run: uv run ru-ai-channels update
+      - name: Commit changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/stats.json README.md
+          if git diff --cached --quiet; then
+            echo "Изменений нет"
+          else
+            git commit -m "chore(data): update subscribers"
+            git push
+          fi

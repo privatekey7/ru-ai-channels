@@ -1,0 +1,289 @@
+# Каталог каналов. Подписчики и даты постов здесь не хранятся: их собирает скрипт (data/stats.json).
+# Хэндл пишется без @. Строка "about" одна, без рекламных оборотов.
+
+[[section]]
+id = "claude-code"
+title = "Claude Code и кодовые агенты"
+description = "Практика работы с Claude Code, Codex, Cursor и другими кодовыми агентами: настройка, лимиты, скиллы, приёмы."
+
+[[section]]
+id = "vibecoding"
+title = "Вайбкодинг"
+description = "Разработка продуктов вместе с ИИ: инструменты, проекты, опыт."
+
+[[section]]
+id = "agents-llm"
+title = "ИИ-агенты и LLM-инженерия"
+description = "Построение систем вокруг языковых моделей: агенты, инфраструктура, сравнение моделей, разбор исследований."
+
+[[section]]
+id = "sdlc"
+title = "ИИ в процессах разработки"
+description = "Как меняются процесс разработки и работа команд, когда код пишут агенты."
+
+[[section]]
+id = "news"
+title = "Новости ИИ для разработчиков"
+description = "Регулярные новости и обзоры по моделям и инструментам с уклоном в разработку."
+
+# --- Claude Code и кодовые агенты ---
+
+[[channel]]
+handle = "privatekey_ai"
+name = "PrivateKey AI"
+section = "claude-code"
+about = "Вайбкодинг и новые нейросети, практика с Claude Code от разработчика с опытом в JS, Python и TypeScript"
+
+[[channel]]
+handle = "codeonvibes"
+name = "Код на вайбах"
+section = "claude-code"
+about = "Claude Code на практике: аккаунты, лимиты, разборы новостей"
+
+[[channel]]
+handle = "claude_mania"
+name = "Claude - мания"
+section = "claude-code"
+about = "Вайбкодинг, промпт-инжиниринг и интеграция LLM через API: Claude, Codex, Cursor"
+
+[[channel]]
+handle = "cc_consultant"
+name = "Дневник Claude Code-консультанта"
+section = "claude-code"
+about = "Что работает и ломается в Claude Code, MCP, промптинг, безопасность для компаний"
+
+[[channel]]
+handle = "claudeholics"
+name = "Клодонутые"
+section = "claude-code"
+about = "Новости и заметки про Claude и агентский кодинг"
+
+[[channel]]
+handle = "ii_pomogator"
+name = "Аи Помогатор"
+section = "claude-code"
+about = "Вайбкодинг и агентская разработка на практике: Claude Code, Cursor, MCP"
+
+[[channel]]
+handle = "ai_in_prod"
+name = "AI-усиленный разработчик"
+section = "claude-code"
+about = "Заметки full-stack архитектора: CLAUDE.md, Claude Code, агенты в продакшене"
+
+[[channel]]
+handle = "v2coder"
+name = "V2 coder"
+section = "claude-code"
+about = "Вайбкодинг на связке Codex и Claude Code, самодельные инструменты автоматизации"
+
+[[channel]]
+handle = "tuzov_ai_lab"
+name = "Tuzov AI Lab"
+section = "claude-code"
+about = "Claude Code, планы и лимиты, разборы изменений в сервисах"
+
+[[channel]]
+handle = "aostrikov_ai_agents"
+name = "Остриков пилит агентов"
+section = "claude-code"
+about = "Практика создания ИИ-агентов и скиллов"
+
+[[channel]]
+handle = "deksden_notes"
+name = "DEKSDEN notes"
+section = "claude-code"
+about = "Вайбкодинг, инструменты AI coding, агенты, опенсорс-проекты автора"
+
+[[channel]]
+handle = "the_ai_architect"
+name = "Тимур Хахалев про AI Coding"
+section = "claude-code"
+about = "AI Coding: приёмы работы с агентами, разбор режимов Claude Code, внедрение в разработку"
+
+[[channel]]
+handle = "gleb_pro_ai"
+name = "Глеб Кудрявцев — мастер AI"
+section = "claude-code"
+about = "Инструменты для кодинга с ИИ и агенты"
+
+[[channel]]
+handle = "syabro_notes"
+name = "Max Syabro and a Slop Driven Development"
+section = "claude-code"
+about = "Заметки практика о разработке с агентами и сопутствующих инструментах"
+
+[[channel]]
+handle = "alexs_journal"
+name = "Лёха ведёт дневник"
+section = "claude-code"
+about = "Личный дневник разработчика: агент со скиллами, Obsidian, заметки об инструментах"
+
+[[channel]]
+handle = "claudedevolper"
+name = "claude dev"
+section = "claude-code"
+about = "Новости и инструменты по Claude Code, гайды и плагины"
+
+[[channel]]
+handle = "prog_ai"
+name = "Vibe Coding: OpenCode, Claude Code, Codex, Cursor, Kilo"
+section = "claude-code"
+about = "Апдейты и тесты ИИ-инструментов для кода, промпты"
+
+# --- Вайбкодинг ---
+
+[[channel]]
+handle = "vibecoding_tg"
+name = "Вайб-кодинг"
+section = "vibecoding"
+about = "Релизы моделей, AI-агенты, инструменты разработки и опенсорс"
+
+[[channel]]
+handle = "failblog"
+name = "FAIL BLOG в вайбкодинге и SaaS"
+section = "vibecoding"
+about = "Автор вайбкодит стартапы для рынка США и рассказывает о тестах моделей"
+
+[[channel]]
+handle = "love_it_hate"
+name = "solo.vlad"
+section = "vibecoding"
+about = "Блог соло-фаундера: продукты, инструменты и советы"
+
+[[channel]]
+handle = "comol_it_does_matter"
+name = "IT Does Matter"
+section = "vibecoding"
+about = "Вайбкодинг в 1С, среды, MCP и ИИ-агенты"
+
+# --- ИИ-агенты и LLM-инженерия ---
+
+[[channel]]
+handle = "neuraldeep"
+name = "Валера Ковальский"
+section = "agents-llm"
+about = "Практический AI-инжиниринг: сравнения LLM, агентная разработка, инфраструктура"
+
+[[channel]]
+handle = "llm_under_hood"
+name = "LLM под капотом"
+section = "agents-llm"
+about = "Разборы работы LLM в продуктах и проектах"
+
+[[channel]]
+handle = "ai_for_devs"
+name = "AI for Devs"
+section = "agents-llm"
+about = "Модели, ИИ-агенты и кейсы для разработчиков"
+
+[[channel]]
+handle = "LLM4dev"
+name = "AI4Dev — AI for Development"
+section = "agents-llm"
+about = "Инструменты и новости про ИИ в разработке"
+
+[[channel]]
+handle = "abstractdl"
+name = "AbstractDL"
+section = "agents-llm"
+about = "Краткие разборы исследований в NLP и AI, заметки об агентах для кода"
+
+[[channel]]
+handle = "evilfreelancer"
+name = "Pavel Zloi"
+section = "agents-llm"
+about = "Самодельные кодовые агенты и LLM-инфраструктура"
+
+[[channel]]
+handle = "partially_unsupervised"
+name = "partially unsupervised"
+section = "agents-llm"
+about = "Инженерия ПО и машинное обучение"
+
+[[channel]]
+handle = "ai_in_dev"
+name = "AI и разработка"
+section = "agents-llm"
+about = "Практика ИИ в разработке: LLM, агенты, Cursor, LangChain, кейсы"
+
+[[channel]]
+handle = "LLMCrew"
+name = "LLM Crew"
+section = "agents-llm"
+about = "Сообщество инженеров, которые строят системы вокруг LLM; обзоры инструментов и моделей"
+
+# --- ИИ в процессах разработки ---
+
+[[channel]]
+handle = "techlead_stream"
+name = "TechLead Stream"
+section = "sdlc"
+about = "Перестройка процессов разработки под ИИ, заметки CTO"
+
+[[channel]]
+handle = "silent_ai_cto"
+name = "О чём молчит AI CTO"
+section = "sdlc"
+about = "Применение ИИ в бизнесе и разработке, разбор технологий"
+
+[[channel]]
+handle = "nobilix"
+name = "Refat Talks: Tech & AI"
+section = "sdlc"
+about = "GenAI и AI-автоматизации в компаниях, подход к SDLC"
+
+[[channel]]
+handle = "aiproka4"
+name = "Алексей | AI PROKA4"
+section = "sdlc"
+about = "Внедрение ИИ в процессы разработки на уровне компании"
+
+# --- Новости ИИ для разработчиков ---
+
+[[channel]]
+handle = "denissexy"
+name = "Denis Sexy IT"
+section = "news"
+about = "Новости ИИ и технологий, заметки автора"
+
+[[channel]]
+handle = "ai_newz"
+name = "эйай ньюз"
+section = "news"
+about = "Новости и разборы моделей и исследований ИИ"
+
+[[channel]]
+handle = "data_secrets"
+name = "Data Secrets"
+section = "news"
+about = "Новости машинного обучения и ИИ"
+
+[[channel]]
+handle = "seeallochnaya"
+name = "Сиолошная"
+section = "news"
+about = "Разборы больших языковых моделей и новостей отрасли"
+
+[[channel]]
+handle = "neuro_channel"
+name = "Нейроканал"
+section = "news"
+about = "Новости ИИ, нейросетей и машинного обучения от Tproger"
+
+[[channel]]
+handle = "tips_ai"
+name = "Tips AI"
+section = "news"
+about = "Находки и тесты ИИ-инструментов для IT"
+
+[[channel]]
+handle = "boris_again"
+name = "Борис опять"
+section = "news"
+about = "Еженедельные дайджесты AI/ML и заметки автора"
+
+[[channel]]
+handle = "evocoders"
+name = "Эволюция Кода"
+section = "news"
+about = "Дайджесты новостей ИИ в программировании"
