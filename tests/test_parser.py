@@ -60,8 +60,12 @@ def test_closed_feed_card_gives_subscribers_only() -> None:
     assert info.last_post is None
 
 
-def test_group_card_is_not_a_channel() -> None:
-    assert parse_channel_page(load("card_group.html")).kind is PageKind.NOT_FOUND
+def test_group_card_gives_members() -> None:
+    info = parse_channel_page(load("card_group.html"))
+
+    assert info.kind is PageKind.GROUP
+    assert info.subscribers == 2_651
+    assert info.last_post is None
 
 
 def test_user_card_is_not_a_channel() -> None:

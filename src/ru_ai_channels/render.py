@@ -4,7 +4,7 @@ from __future__ import annotations
 
 from datetime import date, datetime
 
-from .catalog import Catalog, Channel, Section, Stat
+from .catalog import Catalog, Channel, Chat, Section, Stat
 
 STALE_DAYS = 30
 
@@ -41,7 +41,7 @@ def _escape(text: str) -> str:
     return text.replace("|", r"\|")
 
 
-def _sort_key(channel: Channel, stats: dict[str, Stat]) -> tuple[int, str]:
+def _sort_key(channel: Channel | Chat, stats: dict[str, Stat]) -> tuple[int, str]:
     stat = stats.get(channel.handle.lower())
     subs = stat.subscribers if stat and stat.subscribers is not None else -1
     return (-subs, channel.handle.lower())
@@ -68,6 +68,27 @@ def render_section(
     return "\n".join(lines)
 
 
+def render_chats(chats: list[Chat], stats: dict[str, Stat]) -> str:
+    if not chats:
+        return ""
+    lines = [
+        f"### Чаты ({len(chats)})",
+        "",
+        "Открытые чаты, где можно задать вопрос по теме и получить ответ от участников.",
+        "",
+        "| Чат | О чём | Участники |",
+        "|---|---|---:|",
+    ]
+    for chat in sorted(chats, key=lambda c: _sort_key(c, stats)):
+        stat = stats.get(chat.handle.lower())
+        members = format_number(stat.subscribers if stat else None)
+        lines.append(
+            f"| [{_escape(chat.name)}](https://t.me/{chat.handle}) "
+            f"| {_escape(chat.about)} | {members} |"
+        )
+    return "\n".join(lines)
+
+
 def render_readme(
     template: str,
     catalog: Catalog,
@@ -86,4 +107,6 @@ def render_readme(
         .replace("{{STALE}}", str(stale))
         .replace("{{UPDATED}}", updated or "ещё не обновлялось")
         .replace("{{SECTIONS}}", "\n\n".join(sections))
+        .replace("{{CHAT_COUNT}}", str(len(catalog.chats)))
+        .replace("{{CHATS}}", render_chats(catalog.chats, stats))
     )

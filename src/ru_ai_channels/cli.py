@@ -34,13 +34,15 @@ def cmd_update(delay: float) -> int:
     catalog = load_catalog(CHANNELS)
     stats = load_stats(STATS)
     today = datetime.now(UTC).date()
-    handles = [c.handle for c in catalog.channels]
     with make_client() as client:
-        results = fetch_all(client, handles, delay=delay)
+        channels = fetch_all(client, [c.handle for c in catalog.channels], delay=delay)
+        chats = fetch_all(client, [c.handle for c in catalog.chats], delay=delay, feed=False)
+    results = channels + chats
+    chat_handles = {c.handle.lower() for c in catalog.chats}
     failed = [r for r in results if r.error]
     for r in results:
         key = r.handle.lower()
-        new = merge_stat(stats.get(key), r, today)
+        new = merge_stat(stats.get(key), r, today, chat=key in chat_handles)
         if new is None:
             print(f"ВНИМАНИЕ: {r.handle} не найден на t.me, проверьте вручную", file=sys.stderr)
             stats.pop(key, None)
@@ -53,7 +55,7 @@ def cmd_update(delay: float) -> int:
         return 1
     save_stats(STATS, stats, today.isoformat())
     README.write_text(build_readme(), encoding="utf-8", newline="\n")
-    print(f"Обновлено: {len(results) - len(failed)}/{len(results)} каналов")
+    print(f"Обновлено: {len(results) - len(failed)}/{len(results)} каналов и чатов")
     return 0
 
 
@@ -71,9 +73,9 @@ def cmd_check() -> int:
     return 0
 
 
-def cmd_probe(handles: list[str], delay: float) -> int:
+def cmd_probe(handles: list[str], delay: float, *, chat: bool = False) -> int:
     with make_client() as client:
-        for r in fetch_all(client, handles, delay=delay):
+        for r in fetch_all(client, handles, delay=delay, feed=not chat):
             if r.info is None:
                 print(f"{r.handle}\tERROR\t{r.error}")
             elif r.info.kind is PageKind.NOT_FOUND:
@@ -94,6 +96,7 @@ def main(argv: list[str] | None = None) -> int:
         p.add_argument("--delay", type=float, default=2.0, help="пауза между запросами, с")
         if name == "probe":
             p.add_argument("handles", nargs="+")
+            p.add_argument("--chat", action="store_true", help="это группа или чат")
     sub.add_parser("render", help="пересобрать README без сети")
     sub.add_parser("check", help="проверить, что README соответствует данным")
     args = parser.parse_args(argv)
@@ -102,7 +105,7 @@ def main(argv: list[str] | None = None) -> int:
     if args.command == "update":
         return cmd_update(args.delay)
     if args.command == "probe":
-        return cmd_probe(args.handles, args.delay)
+        return cmd_probe(args.handles, args.delay, chat=args.chat)
     if args.command == "render":
         return cmd_render()
     return cmd_check()

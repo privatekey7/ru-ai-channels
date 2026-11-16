@@ -6,6 +6,7 @@ from ru_ai_channels.catalog import (
     Catalog,
     CatalogError,
     Channel,
+    Chat,
     Section,
     Stat,
     load_catalog,
@@ -18,8 +19,8 @@ ROOT = Path(__file__).resolve().parents[1]
 SECTIONS = [Section("s", "Раздел", "Описание")]
 
 
-def catalog(*channels: Channel) -> Catalog:
-    return Catalog(SECTIONS, list(channels))
+def catalog(*channels: Channel, chats: tuple[Chat, ...] = ()) -> Catalog:
+    return Catalog(SECTIONS, list(channels), list(chats))
 
 
 def test_real_data_file_is_valid_and_in_target_size() -> None:
@@ -41,6 +42,22 @@ def test_validate_rejects_unknown_section() -> None:
 def test_validate_rejects_handle_with_at_sign() -> None:
     with pytest.raises(CatalogError, match="хэндл"):
         validate(catalog(Channel("@abcde", "A", "s", "x")))
+
+
+def test_real_data_file_has_chats() -> None:
+    loaded = load_catalog(ROOT / "data" / "channels.toml")
+
+    assert any(c.handle == "privatekey_ai_chat" for c in loaded.chats)
+
+
+def test_validate_rejects_chat_with_same_handle_as_channel() -> None:
+    with pytest.raises(CatalogError, match="Дубликат"):
+        validate(catalog(Channel("abcde", "A", "s", "x"), chats=(Chat("ABCDE", "B", "y"),)))
+
+
+def test_validate_rejects_chat_with_multiline_about() -> None:
+    with pytest.raises(CatalogError, match="about"):
+        validate(catalog(chats=(Chat("abcde", "B", "a\nb"),)))
 
 
 def test_stats_roundtrip(tmp_path: Path) -> None:

@@ -287,3 +287,15 @@ handle = "evocoders"
 name = "Эволюция Кода"
 section = "news"
 about = "Дайджесты новостей ИИ в программировании"
+
+# --- Чаты: отдельный раздел, вместо ленты считаются участники (t.me/<чат>) ---
+
+[[chat]]
+handle = "privatekey_ai_chat"
+name = "PrivateKey AI Chat"
+about = "Чат канала @privatekey_ai: вопросы по настройке Claude Code и кодовых агентов, обсуждение постов"
+
+[[chat]]
+handle = "claudecodeteam"
+name = "Claude Code Community"
+about = "Сообщество пользователей Claude Code: вопросы, приёмы, новости"

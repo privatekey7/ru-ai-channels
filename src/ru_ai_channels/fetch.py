@@ -38,8 +38,11 @@ def make_client(timeout: float = 20.0) -> httpx.Client:
     )
 
 
-def fetch_channel(client: httpx.Client, handle: str, retries: int = 2) -> FetchResult:
-    url = f"https://t.me/s/{handle}"
+def fetch_channel(
+    client: httpx.Client, handle: str, retries: int = 2, *, feed: bool = True
+) -> FetchResult:
+    """feed=False — карточка t.me/<хэндл>: у групп и чатов ленты t.me/s нет."""
+    url = f"https://t.me/s/{handle}" if feed else f"https://t.me/{handle}"
     last_error = "неизвестная ошибка"
     for attempt in range(retries + 1):
         try:
@@ -62,26 +65,35 @@ def fetch_all(
     handles: list[str],
     delay: float = 2.0,
     sleep: Callable[[float], None] = time.sleep,
+    *,
+    feed: bool = True,
 ) -> list[FetchResult]:
     results: list[FetchResult] = []
     for i, handle in enumerate(handles):
         if i:
             sleep(delay)
-        result = fetch_channel(client, handle)
+        result = fetch_channel(client, handle, feed=feed)
         log.info("%s: %s", handle, result.error or result.info)
         results.append(result)
     return results
 
 
-def merge_stat(previous: Stat | None, result: FetchResult, today: date) -> Stat | None:
-    """Новая статистика канала. Ошибка сети оставляет прежнее значение.
+def merge_stat(
+    previous: Stat | None, result: FetchResult, today: date, *, chat: bool = False
+) -> Stat | None:
+    """Новая статистика канала или чата. Ошибка сети оставляет прежнее значение.
 
-    None означает, что канал пропал (нет такого канала) и его надо проверить вручную.
+    None означает, что запись пропала или сменила тип (канал стал группой и наоборот):
+    её надо проверить вручную.
     """
     if result.info is None:
         return previous
     info = result.info
-    if info.kind is PageKind.NOT_FOUND:
+    if chat and info.kind is PageKind.NOT_FOUND and previous is not None:
+        # Под нагрузкой t.me отдаёт пустую карточку, её не отличить от пропавшего чата.
+        return previous
+    expected = {PageKind.GROUP} if chat else {PageKind.FEED, PageKind.CLOSED}
+    if info.kind not in expected:
         return None
     return Stat(
         subscribers=info.subscribers,

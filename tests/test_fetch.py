@@ -80,3 +80,46 @@ def test_merge_records_closed_feed() -> None:
     merged = merge_stat(None, result, TODAY)
 
     assert merged == Stat(subscribers=4, last_post=None, checked="2026-11-12", feed_open=False)
+
+
+def test_fetch_chat_requests_the_card_not_the_feed() -> None:
+    html = (FIXTURES / "card_group.html").read_text(encoding="utf-8")
+    urls: list[str] = []
+
+    def handler(request: httpx.Request) -> httpx.Response:
+        urls.append(str(request.url))
+        return httpx.Response(200, text=html)
+
+    result = fetch_channel(client_with(httpx.MockTransport(handler)), "some_chat", feed=False)
+
+    assert urls == ["https://t.me/some_chat"]
+    assert result.info is not None
+    assert result.info.kind is PageKind.GROUP
+
+
+def test_merge_records_chat_members() -> None:
+    result = FetchResult("a", ChannelInfo(kind=PageKind.GROUP, subscribers=62))
+
+    merged = merge_stat(None, result, TODAY, chat=True)
+
+    assert merged == Stat(subscribers=62, last_post=None, checked="2026-11-12", feed_open=False)
+
+
+def test_merge_drops_channel_that_turned_into_a_group() -> None:
+    result = FetchResult("a", ChannelInfo(kind=PageKind.GROUP, subscribers=62))
+
+    assert merge_stat(Stat(subscribers=5), result, TODAY) is None
+
+
+def test_merge_drops_chat_that_turned_into_a_channel() -> None:
+    result = FetchResult("a", ChannelInfo(kind=PageKind.CLOSED, subscribers=62))
+
+    assert merge_stat(Stat(subscribers=5), result, TODAY, chat=True) is None
+
+
+def test_merge_keeps_previous_chat_on_empty_card() -> None:
+    # Под нагрузкой t.me отдаёт пустую карточку: её не отличить от пропавшего чата.
+    previous = Stat(subscribers=62, checked="2026-11-11", feed_open=False)
+    result = FetchResult("a", ChannelInfo(kind=PageKind.NOT_FOUND))
+
+    assert merge_stat(previous, result, TODAY, chat=True) == previous

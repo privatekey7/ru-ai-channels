@@ -4,6 +4,7 @@ from pathlib import Path
 from ru_ai_channels.catalog import (
     Catalog,
     Channel,
+    Chat,
     Section,
     Stat,
     load_catalog,
@@ -14,6 +15,7 @@ from ru_ai_channels.render import (
     format_last_post,
     format_number,
     is_stale,
+    render_chats,
     render_readme,
     render_section,
 )
@@ -79,6 +81,38 @@ def test_closed_feed_is_shown_explicitly() -> None:
     stat = Stat(4, None, "2026-11-12", feed_open=False)
 
     assert format_last_post(stat, TODAY) == "лента закрыта"
+
+
+CHATS = [
+    Chat("small_chat", "Малый | чат", "Помогают с настройкой"),
+    Chat("big_chat", "Большой чат", "Обсуждение"),
+]
+CHAT_STATS = {
+    "small_chat": Stat(62, None, "2026-11-12", feed_open=False),
+    "big_chat": Stat(2_688, None, "2026-11-12", feed_open=False),
+}
+
+
+def test_chats_are_sorted_by_members_and_show_member_count() -> None:
+    text = render_chats(CHATS, CHAT_STATS)
+
+    assert "### Чаты (2)" in text
+    assert "| Участники |" in text
+    assert text.index("t.me/big_chat)") < text.index("t.me/small_chat)")
+    assert r"[Малый \| чат](https://t.me/small_chat) | Помогают с настройкой | 62 |" in text
+
+
+def test_no_chats_render_nothing() -> None:
+    assert render_chats([], {}) == ""
+
+
+def test_chats_do_not_count_as_channels_or_stale() -> None:
+    template = "{{COUNT}}/{{STALE}}/{{CHAT_COUNT}}\n{{CHATS}}"
+    catalog = Catalog([SECTION], CHANNELS, CHATS)
+
+    text = render_readme(template, catalog, STATS | CHAT_STATS, TODAY, "2026-11-12")
+
+    assert text.startswith("4/1/2\n### Чаты (2)")
 
 
 def test_readme_fills_all_placeholders_and_skips_empty_sections() -> None:

@@ -14,7 +14,8 @@ class PageKind(StrEnum):
 
     FEED = "feed"  # открытая лента t.me/s/<канал>
     CLOSED = "closed"  # канал есть, но превью ленты отключено
-    NOT_FOUND = "not_found"  # такого канала нет или это не канал
+    GROUP = "group"  # открытая группа или чат: есть число участников, ленты нет
+    NOT_FOUND = "not_found"  # такого канала нет, или это пользователь, или бот
 
 
 @dataclass(frozen=True)
@@ -76,16 +77,15 @@ def _parse_feed(html: str) -> ChannelInfo:
 
 
 def _parse_card(html: str) -> ChannelInfo:
-    """Карточка t.me/<канал>: подписчики есть, ленты нет (или это пользователь/бот)."""
+    """Карточка t.me/<хэндл>: канал с закрытой лентой, группа, пользователь или бот."""
     title_match = _PAGE_TITLE.search(html)
     extra_match = _PAGE_EXTRA.search(html)
     extra = _clean(extra_match.group(1)) if extra_match else ""
-    # «members» бывает у групп и чатов: это не канал, в каталог не берём
-    count = re.match(r"([\d\s.,KkMm]+)\s+subscribers", extra)
+    count = re.match(r"([\d\s.,KkMm]+?)\s+(subscribers|members)", extra)
     if not count:
         return ChannelInfo(kind=PageKind.NOT_FOUND)
     return ChannelInfo(
-        kind=PageKind.CLOSED,
+        kind=PageKind.CLOSED if count.group(2) == "subscribers" else PageKind.GROUP,
         title=_clean(title_match.group(1)) if title_match else None,
         subscribers=parse_count(count.group(1)),
     )

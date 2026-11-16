@@ -15,7 +15,7 @@
     },
     "ai_in_dev": {
       "subscribers": 185,
-      "last_post": "2026-11-11T09:07:11+00:00",
+      "last_post": "2026-11-16T14:21:03+00:00",
       "checked": "2026-11-16",
       "feed_open": true
     },
@@ -67,6 +67,12 @@
       "checked": "2026-11-16",
       "feed_open": true
     },
+    "claudecodeteam": {
+      "subscribers": 2688,
+      "last_post": null,
+      "checked": "2026-11-16",
+      "feed_open": false
+    },
     "claudedevolper": {
       "subscribers": 5740,
       "last_post": "2026-11-16T09:32:13+00:00",
@@ -93,7 +99,7 @@
     },
     "data_secrets": {
       "subscribers": 96300,
-      "last_post": "2026-11-16T12:25:40+00:00",
+      "last_post": "2026-11-16T15:02:01+00:00",
       "checked": "2026-11-16",
       "feed_open": true
     },
@@ -111,7 +117,7 @@
     },
     "evilfreelancer": {
       "subscribers": 4740,
-      "last_post": "2026-11-14T23:13:42+00:00",
+      "last_post": "2026-11-16T15:09:46+00:00",
       "checked": "2026-11-16",
       "feed_open": true
     },
@@ -165,7 +171,7 @@
     },
     "neuraldeep": {
       "subscribers": 20700,
-      "last_post": "2026-11-15T05:40:43+00:00",
+      "last_post": "2026-11-16T14:26:11+00:00",
       "checked": "2026-11-16",
       "feed_open": true
     },
@@ -188,14 +194,20 @@
       "feed_open": true
     },
     "privatekey_ai": {
-      "subscribers": 999,
+      "subscribers": 1000,
       "last_post": "2026-11-15T13:58:08+00:00",
       "checked": "2026-11-16",
       "feed_open": true
     },
+    "privatekey_ai_chat": {
+      "subscribers": 62,
+      "last_post": null,
+      "checked": "2026-11-16",
+      "feed_open": false
+    },
     "prog_ai": {
       "subscribers": 4810,
-      "last_post": "2026-11-16T13:05:00+00:00",
+      "last_post": "2026-11-16T14:56:07+00:00",
       "checked": "2026-11-16",
       "feed_open": true
     },
@@ -218,7 +230,7 @@
       "feed_open": true
     },
     "techlead_stream": {
-      "subscribers": 953,
+      "subscribers": 954,
       "last_post": "2026-11-11T23:00:37+00:00",
       "checked": "2026-11-16",
       "feed_open": true
@@ -231,7 +243,7 @@
     },
     "tips_ai": {
       "subscribers": 26000,
-      "last_post": "2026-11-16T12:19:42+00:00",
+      "last_post": "2026-11-16T13:51:35+00:00",
       "checked": "2026-11-16",
       "feed_open": true
     },
