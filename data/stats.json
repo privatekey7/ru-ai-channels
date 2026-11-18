@@ -1,268 +1,268 @@
 {
-  "updated": "2026-11-17",
+  "updated": "2026-11-18",
   "channels": {
     "abstractdl": {
       "subscribers": 18900,
-      "last_post": "2026-11-14T21:43:29+00:00",
-      "checked": "2026-11-17",
+      "last_post": "2026-11-18T11:37:41+00:00",
+      "checked": "2026-11-18",
       "feed_open": true
     },
     "ai_for_devs": {
-      "subscribers": 18800,
-      "last_post": "2026-11-17T14:06:30+00:00",
-      "checked": "2026-11-17",
+      "subscribers": 19600,
+      "last_post": "2026-11-18T07:42:21+00:00",
+      "checked": "2026-11-18",
       "feed_open": true
     },
     "ai_in_dev": {
       "subscribers": 184,
-      "last_post": "2026-11-16T14:21:03+00:00",
-      "checked": "2026-11-17",
+      "last_post": "2026-11-18T08:03:01+00:00",
+      "checked": "2026-11-18",
       "feed_open": true
     },
     "ai_in_prod": {
       "subscribers": 64,
       "last_post": "2026-10-29T13:22:42+00:00",
-      "checked": "2026-11-17",
+      "checked": "2026-11-18",
       "feed_open": true
     },
     "ai_newz": {
-      "subscribers": 98500,
-      "last_post": "2026-11-16T18:28:46+00:00",
-      "checked": "2026-11-17",
+      "subscribers": 98600,
+      "last_post": "2026-11-17T18:03:48+00:00",
+      "checked": "2026-11-18",
       "feed_open": true
     },
     "aiproka4": {
-      "subscribers": 684,
+      "subscribers": 683,
       "last_post": "2026-11-03T19:56:47+00:00",
-      "checked": "2026-11-17",
+      "checked": "2026-11-18",
       "feed_open": true
     },
     "alexs_journal": {
       "subscribers": 1090,
       "last_post": "2026-11-16T15:29:53+00:00",
-      "checked": "2026-11-17",
+      "checked": "2026-11-18",
       "feed_open": true
     },
     "aostrikov_ai_agents": {
-      "subscribers": 5970,
+      "subscribers": 5980,
       "last_post": "2026-11-16T18:03:11+00:00",
-      "checked": "2026-11-17",
+      "checked": "2026-11-18",
       "feed_open": true
     },
     "boris_again": {
       "subscribers": 18000,
-      "last_post": "2026-11-17T13:45:28+00:00",
-      "checked": "2026-11-17",
+      "last_post": "2026-11-17T16:26:01+00:00",
+      "checked": "2026-11-18",
       "feed_open": true
     },
     "cc_consultant": {
       "subscribers": 86,
       "last_post": "2026-11-13T12:23:23+00:00",
-      "checked": "2026-11-17",
+      "checked": "2026-11-18",
       "feed_open": true
     },
     "claude_mania": {
-      "subscribers": 1490,
-      "last_post": "2026-11-17T11:10:26+00:00",
-      "checked": "2026-11-17",
+      "subscribers": 1480,
+      "last_post": "2026-11-18T10:00:05+00:00",
+      "checked": "2026-11-18",
       "feed_open": true
     },
     "claudecodeteam": {
-      "subscribers": 2693,
+      "subscribers": 2703,
       "last_post": null,
-      "checked": "2026-11-17",
+      "checked": "2026-11-18",
       "feed_open": false
     },
     "claudedevolper": {
-      "subscribers": 5760,
-      "last_post": "2026-11-16T18:38:57+00:00",
-      "checked": "2026-11-17",
+      "subscribers": 5790,
+      "last_post": "2026-11-18T11:19:18+00:00",
+      "checked": "2026-11-18",
       "feed_open": true
     },
     "claudeholics": {
       "subscribers": 184,
       "last_post": "2026-11-09T20:23:46+00:00",
-      "checked": "2026-11-17",
+      "checked": "2026-11-18",
       "feed_open": true
     },
     "codeonvibes": {
-      "subscribers": 1590,
-      "last_post": "2026-11-17T05:21:01+00:00",
-      "checked": "2026-11-17",
+      "subscribers": 1600,
+      "last_post": "2026-11-17T18:03:55+00:00",
+      "checked": "2026-11-18",
       "feed_open": true
     },
     "comol_it_does_matter": {
-      "subscribers": 4880,
-      "last_post": "2026-11-17T06:43:01+00:00",
-      "checked": "2026-11-17",
+      "subscribers": 4890,
+      "last_post": "2026-11-18T06:10:57+00:00",
+      "checked": "2026-11-18",
       "feed_open": true
     },
     "data_secrets": {
-      "subscribers": 96300,
-      "last_post": "2026-11-17T14:28:00+00:00",
-      "checked": "2026-11-17",
+      "subscribers": 96400,
+      "last_post": "2026-11-18T11:14:06+00:00",
+      "checked": "2026-11-18",
       "feed_open": true
     },
     "deksden_notes": {
       "subscribers": 3250,
-      "last_post": "2026-11-17T12:42:53+00:00",
-      "checked": "2026-11-17",
+      "last_post": "2026-11-18T12:08:20+00:00",
+      "checked": "2026-11-18",
       "feed_open": true
     },
     "denissexy": {
       "subscribers": 141000,
-      "last_post": "2026-11-16T22:33:19+00:00",
-      "checked": "2026-11-17",
+      "last_post": "2026-11-18T12:09:16+00:00",
+      "checked": "2026-11-18",
       "feed_open": true
     },
     "evilfreelancer": {
       "subscribers": 4730,
-      "last_post": "2026-11-17T09:03:56+00:00",
-      "checked": "2026-11-17",
+      "last_post": "2026-11-18T08:11:28+00:00",
+      "checked": "2026-11-18",
       "feed_open": true
     },
     "evocoders": {
-      "subscribers": 2770,
-      "last_post": "2026-11-06T07:58:03+00:00",
-      "checked": "2026-11-17",
+      "subscribers": 2760,
+      "last_post": "2026-11-17T15:08:59+00:00",
+      "checked": "2026-11-18",
       "feed_open": true
     },
     "failblog": {
       "subscribers": 17800,
-      "last_post": "2026-11-16T21:14:20+00:00",
-      "checked": "2026-11-17",
+      "last_post": "2026-11-17T17:43:31+00:00",
+      "checked": "2026-11-18",
       "feed_open": true
     },
     "gleb_pro_ai": {
       "subscribers": 19000,
       "last_post": "2026-11-16T20:24:39+00:00",
-      "checked": "2026-11-17",
+      "checked": "2026-11-18",
       "feed_open": true
     },
     "ii_pomogator": {
       "subscribers": 222,
       "last_post": "2026-11-15T22:13:16+00:00",
-      "checked": "2026-11-17",
+      "checked": "2026-11-18",
       "feed_open": true
     },
     "llm4dev": {
-      "subscribers": 5330,
+      "subscribers": 5340,
       "last_post": "2026-11-14T09:20:08+00:00",
-      "checked": "2026-11-17",
+      "checked": "2026-11-18",
       "feed_open": true
     },
     "llm_under_hood": {
       "subscribers": 30500,
-      "last_post": "2026-11-17T09:29:18+00:00",
-      "checked": "2026-11-17",
+      "last_post": "2026-11-17T14:49:41+00:00",
+      "checked": "2026-11-18",
       "feed_open": true
     },
     "llmcrew": {
-      "subscribers": 282,
-      "last_post": "2026-11-16T08:17:23+00:00",
-      "checked": "2026-11-17",
+      "subscribers": 292,
+      "last_post": "2026-11-18T09:58:10+00:00",
+      "checked": "2026-11-18",
       "feed_open": true
     },
     "love_it_hate": {
       "subscribers": 10900,
-      "last_post": "2026-11-17T11:49:25+00:00",
-      "checked": "2026-11-17",
+      "last_post": "2026-11-18T10:54:28+00:00",
+      "checked": "2026-11-18",
       "feed_open": true
     },
     "neuraldeep": {
       "subscribers": 20700,
       "last_post": "2026-11-17T08:52:50+00:00",
-      "checked": "2026-11-17",
+      "checked": "2026-11-18",
       "feed_open": true
     },
     "neuro_channel": {
       "subscribers": 12100,
-      "last_post": "2026-11-17T14:33:01+00:00",
-      "checked": "2026-11-17",
+      "last_post": "2026-11-18T11:35:45+00:00",
+      "checked": "2026-11-18",
       "feed_open": true
     },
     "nobilix": {
-      "subscribers": 15700,
-      "last_post": "2026-11-14T18:36:22+00:00",
-      "checked": "2026-11-17",
+      "subscribers": 15600,
+      "last_post": "2026-11-17T16:27:25+00:00",
+      "checked": "2026-11-18",
       "feed_open": true
     },
     "partially_unsupervised": {
       "subscribers": 10600,
       "last_post": "2026-10-28T13:58:45+00:00",
-      "checked": "2026-11-17",
+      "checked": "2026-11-18",
       "feed_open": true
     },
     "privatekey_ai": {
       "subscribers": 1010,
       "last_post": "2026-11-17T13:55:43+00:00",
-      "checked": "2026-11-17",
+      "checked": "2026-11-18",
       "feed_open": true
     },
     "privatekey_ai_chat": {
-      "subscribers": 63,
+      "subscribers": 65,
       "last_post": null,
-      "checked": "2026-11-17",
+      "checked": "2026-11-18",
       "feed_open": false
     },
     "prog_ai": {
       "subscribers": 4810,
-      "last_post": "2026-11-16T14:56:07+00:00",
-      "checked": "2026-11-17",
+      "last_post": "2026-11-18T11:57:38+00:00",
+      "checked": "2026-11-18",
       "feed_open": true
     },
     "seeallochnaya": {
-      "subscribers": 81500,
-      "last_post": "2026-11-17T11:00:08+00:00",
-      "checked": "2026-11-17",
+      "subscribers": 81600,
+      "last_post": "2026-11-18T11:15:56+00:00",
+      "checked": "2026-11-18",
       "feed_open": true
     },
     "silent_ai_cto": {
       "subscribers": 1160,
       "last_post": "2026-11-17T06:27:01+00:00",
-      "checked": "2026-11-17",
+      "checked": "2026-11-18",
       "feed_open": true
     },
     "syabro_notes": {
-      "subscribers": 1000,
-      "last_post": "2026-11-16T06:55:05+00:00",
-      "checked": "2026-11-17",
+      "subscribers": 1010,
+      "last_post": "2026-11-18T04:52:40+00:00",
+      "checked": "2026-11-18",
       "feed_open": true
     },
     "techlead_stream": {
-      "subscribers": 955,
+      "subscribers": 966,
       "last_post": "2026-11-11T23:00:37+00:00",
-      "checked": "2026-11-17",
+      "checked": "2026-11-18",
       "feed_open": true
     },
     "the_ai_architect": {
       "subscribers": 13100,
       "last_post": "2026-11-14T07:02:38+00:00",
-      "checked": "2026-11-17",
+      "checked": "2026-11-18",
       "feed_open": true
     },
     "tips_ai": {
-      "subscribers": 26000,
-      "last_post": "2026-11-17T12:35:56+00:00",
-      "checked": "2026-11-17",
+      "subscribers": 26100,
+      "last_post": "2026-11-18T12:23:49+00:00",
+      "checked": "2026-11-18",
       "feed_open": true
     },
     "tuzov_ai_lab": {
       "subscribers": 4520,
       "last_post": "2026-11-06T19:45:52+00:00",
-      "checked": "2026-11-17",
+      "checked": "2026-11-18",
       "feed_open": true
     },
     "v2coder": {
-      "subscribers": 208,
+      "subscribers": 210,
       "last_post": "2026-11-13T07:34:01+00:00",
-      "checked": "2026-11-17",
+      "checked": "2026-11-18",
       "feed_open": true
     },
     "vibecoding_tg": {
-      "subscribers": 81400,
-      "last_post": "2026-11-17T08:11:01+00:00",
-      "checked": "2026-11-17",
+      "subscribers": 81500,
+      "last_post": "2026-11-18T10:13:01+00:00",
+      "checked": "2026-11-18",
       "feed_open": true
     }
   }
